@@ -1,0 +1,53 @@
+<div class="profile__page">
+    <a href="/#/chat" class="profile__back-button">
+        <div class="profile__back-icon">
+            <img src="{{arrow}}"/>
+        </div>
+    </a>
+    <div class="profile__main-content">
+        <div class="profile__card">
+            <div class="profile__avatar">
+                <img src="{{avatar}}"/>
+            </div>
+            <h3 class="profile__name">{{personalData.chatName}}</h3>
+
+            <div class="profile__personal-data">
+                {{#each personalFields}}
+                    <div class="profile__field">
+                        <div class="profile__field-caption">{{this.caption}}</div>
+                        <div class="profile__field-value">
+                            {{#if ../edit}}
+                                <input
+                                        class="profile__field-input"
+                                        value="{{this.value}}"
+                                        type="{{#if ../changePassword}}password{{else}}text{{/if}}"
+                                >
+                            {{else}}
+                                {{this.value}}
+                            {{/if}}
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+
+
+            <div class="profile__controls">
+                {{#if edit}}
+                    {{{saveButton}}}
+                {{else}}
+                    <div class="profile__field">
+                        <a href="/#/profile/edit" class="profile__controls-link">Изменить данные</a>
+                    </div>
+
+                    <div class="profile__field">
+                        <a href="/#/profile/change-password" class="profile__controls-link">Изменить пароль</a>
+                    </div>
+
+                    <div class="profile__field">
+                        <a class="profile__controls-link profile__controls-link_danger">Выйти</a>
+                    </div>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</div>

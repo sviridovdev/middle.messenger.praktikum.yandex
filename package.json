@@ -8,10 +8,11 @@
     "start": "node server.js"
   },
   "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.3",
     "cssnano": "^4.1.11",
     "express": "^4.18.2",
     "parcel": "^2.8.3",
-    "parcel-plugin-handlebars-precompile": "^1.0.2",
+    "parcel-transformer-hbs": "^1.0.4",
     "sass": "^1.60.0"
   },
   "dependencies": {

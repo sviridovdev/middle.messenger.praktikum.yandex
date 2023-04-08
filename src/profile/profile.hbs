@@ -5,10 +5,11 @@
         </div>
     </a>
     <div class="profile__main-content">
-        <div class="profile__card">
-            <div class="profile__avatar">
+        <form class="profile__card">
+            <label class="profile__avatar" for="change-avatar">
                 <img src="{{avatar}}"/>
-            </div>
+            </label>
+            <input type="file" id="change-avatar" name="avatar"/>
             <h3 class="profile__name">{{personalData.chatName}}</h3>
 
             <div class="profile__personal-data">
@@ -20,6 +21,7 @@
                                 <input
                                         class="profile__field-input"
                                         value="{{this.value}}"
+                                        name="{{this.name}}"
                                         type="{{#if ../changePassword}}password{{else}}text{{/if}}"
                                 >
                             {{else}}
@@ -48,6 +50,6 @@
                     </div>
                 {{/if}}
             </div>
-        </div>
+        </form>
     </div>
 </div>

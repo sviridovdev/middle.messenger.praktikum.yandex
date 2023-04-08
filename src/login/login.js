@@ -21,7 +21,8 @@ export const login = () => {
   const submitButton = button({
     variant: 'primary',
     caption: 'Авторизоваться',
-    fullWidth: true
+    fullWidth: true,
+    type: 'submit'
   });
 
   const toRegistrationButton = button({

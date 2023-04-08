@@ -18,14 +18,14 @@ export const register = () => {
   });
 
   const firstNameInput = input({
-    name: 'firstName',
+    name: 'first_name',
     placeholder: 'Имя',
     type: 'text',
     fullWidth: true
   });
 
   const lastNameInput = input({
-    name: 'lastName',
+    name: 'second_name',
     placeholder: 'Фамилия',
     type: 'text',
     fullWidth: true
@@ -46,7 +46,7 @@ export const register = () => {
   });
 
   const passwordRepeatInput = input({
-    name: 'passwordRepeat',
+    name: 'password_repeat',
     placeholder: 'Пароль (ещё раз)',
     type: 'password',
     fullWidth: true
@@ -55,7 +55,8 @@ export const register = () => {
   const submitButton = button({
     variant: 'primary',
     caption: 'Зарегистрироваться',
-    fullWidth: true
+    fullWidth: true,
+    type: 'submit'
   });
 
   const toLoginButton = button({

@@ -24,15 +24,15 @@
         {{/each}}
     </div>
 
-    <div class="chat-dialog__input-container">
+    <form class="chat-dialog__input-container">
         <button type="button" class="chat-dialog__attach-button">
             <img src="{{attach}}"/>
         </button>
 
-        <input class="chat-dialog__input" placeholder="Сообщение">
+        <input class="chat-dialog__input" name="message" placeholder="Сообщение">
 
-        <button class="chat-dialog__send">
+        <button class="chat-dialog__send" type="submit">
             <img src="{{messageArrow}}"/>
         </button>
-    </div>
+    </form>
 </div>

@@ -1,10 +1,10 @@
 <div class="chat__container">
     <div class="chat__chats-sidebar">
         <a href="/#/profile" class="chat__profile-link">Профиль <img src="{{{icons.arrow}}}"/></a>
-        <div class="chat__search-container">
-            <input type="text" placeholder="Поиск" class="chat__search">
+        <form class="chat__search-container">
+            <input type="text" placeholder="Поиск" class="chat__search" name="search">
             <img src="{{{icons.search}}}"/>
-        </div>
+        </form>
 
         <ul class="chat__chats-list">
             {{#each chats}}

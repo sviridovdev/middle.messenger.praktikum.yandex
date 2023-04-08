@@ -4,22 +4,22 @@ import avatar from '@svg/avatar.svg';
 import {button} from '../button';
 
 const personalDataCaptions = {
-  firstName: 'Имя',
-  lastName: 'Фамилия',
+  first_name: 'Имя',
+  second_name: 'Фамилия',
   email: 'Почта',
   login: 'Логин',
-  chatName: 'Имя в чате',
+  display_name: 'Имя в чате',
   phone: 'Телефон'
 }
 
 
 const testData = {
   personalData: {
-    firstName: 'Иван',
-    lastName: 'Иванов',
+    first_name: 'Иван',
+    second_name: 'Иванов',
     email: 'pochta@yandex.ru',
     login: 'ivanivanov',
-    chatName: 'Иван',
+    display_name: 'Иван',
     phone: '+7 (909) 967 30 30'
   }
 };
@@ -29,16 +29,20 @@ export const profile = (props) => {
   if (props?.changePassword) {
     personalFields = [{
       caption: 'Старый пароль',
-      value: ''
+      value: '',
+      name: 'oldPassword'
     }, {
       caption: 'Новый пароль',
-      value: ''
+      value: '',
+      name: 'newPassword'
     }, {
       caption: 'Повторите пароль',
-      value: ''
+      value: '',
+      name: 'newPasswordRepeat'
     }]
   } else {
     personalFields = Object.entries((testData.personalData)).map(([key, value]) => ({
+      name: key,
       caption: personalDataCaptions[key],
       value
     }));
@@ -46,9 +50,9 @@ export const profile = (props) => {
 
   const saveButton = button({
     caption: 'Сохранить',
+    type: 'submit',
     variant: 'primary',
-    classes: ['profile__save-button'],
-    href: '/#/profile'
+    classes: ['profile__save-button']
   })
 
   return templateFunction({...props, ...testData, arrow, avatar, personalFields, saveButton});
